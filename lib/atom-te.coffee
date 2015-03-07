@@ -3,6 +3,7 @@ ChildProcess = require 'child_process'
 
 module.exports = AtomTe =
   subscriptions: null
+  lastCommand: null
 
   activate: (state) ->
     # Events subscribed to in atom's system can be easily cleaned up with a CompositeDisposable
@@ -11,6 +12,7 @@ module.exports = AtomTe =
     @subscriptions.add atom.commands.add 'atom-workspace', 'atom-te:runAll': => @runAll()
     @subscriptions.add atom.commands.add 'atom-workspace', 'atom-te:runLine': => @runLine()
     @subscriptions.add atom.commands.add 'atom-workspace', 'atom-te:runFile': => @runFile()
+    @subscriptions.add atom.commands.add 'atom-workspace', 'atom-te:runLast': => @runLast()
 
   deactivate: ->
     @subscriptions.dispose()
@@ -33,6 +35,10 @@ module.exports = AtomTe =
     line = editor.getCursor().getBufferRow() + 1
     @run("#{@currentFile()}:#{line}")
 
+  runLast: ->
+    return unless @lastCommand
+    @run(@lastCommand)
+
   run: (args) ->
     spawn = ChildProcess.spawn
     testCommand = "te run"
@@ -42,6 +48,8 @@ module.exports = AtomTe =
 
     terminal.stdin.write("cd #{@projectRoot()} && #{command}\n")
     terminal.stdin.write("exit\n")
+
+    @lastCommand = args
 
   projectRoot: ->
     atom.project.getRootDirectory().getPath()

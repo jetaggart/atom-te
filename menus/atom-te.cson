@@ -12,6 +12,10 @@
     {
       'label': 'Atom Te: Run Line'
       'command': 'atom-te:runLine'
+    },
+    {
+      'label': 'Atom Te: Run Last'
+      'command': 'atom-te:runLast'
     }
   ]
 'menu': [
@@ -31,6 +35,10 @@
         {
           'label': 'Run Line'
           'command': 'atom-te:runLine'
+        },
+        {
+          'label': 'Run Last'
+          'command': 'atom-te:runLast'
         }
       ]
     ]
