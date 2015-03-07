@@ -2,6 +2,10 @@
 'context-menu':
   'atom-text-editor': [
     {
+      'label': 'Atom Te: Run All'
+      'command': 'atom-te:runAll'
+    },
+    {
       'label': 'Atom Te: Run File'
       'command': 'atom-te:runFile'
     },
@@ -16,6 +20,10 @@
     'submenu': [
       'label': 'Atom Te'
       'submenu': [
+        {
+          'label': 'Run All'
+          'command': 'atom-te:runAll'
+        },
         {
           'label': 'Run File'
           'command': 'atom-te:runFile'

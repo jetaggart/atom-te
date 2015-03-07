@@ -8,6 +8,7 @@ module.exports = AtomTe =
     # Events subscribed to in atom's system can be easily cleaned up with a CompositeDisposable
     @subscriptions = new CompositeDisposable
 
+    @subscriptions.add atom.commands.add 'atom-workspace', 'atom-te:runAll': => @runAll()
     @subscriptions.add atom.commands.add 'atom-workspace', 'atom-te:runLine': => @runLine()
     @subscriptions.add atom.commands.add 'atom-workspace', 'atom-te:runFile': => @runFile()
 
@@ -19,6 +20,9 @@ module.exports = AtomTe =
     return unless editor?
 
     editor.getPath()
+
+  runAll: ->
+    @run("")
 
   runFile: ->
     @run(@currentFile())

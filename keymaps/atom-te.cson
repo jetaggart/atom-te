@@ -10,3 +10,4 @@
 'atom-workspace':
   'ctrl-alt-t': 'atom-te:runFile'
   'ctrl-alt-x': 'atom-te:runLine'
+  'ctrl-alt-r': 'atom-te:runAll'

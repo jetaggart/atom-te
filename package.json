@@ -4,7 +4,11 @@
   "version": "0.0.0",
   "description": "A short description of your package",
   "activationCommands": {
-    "atom-workspace": ["atom-te:runLine", "atom-te:runFile"]
+    "atom-workspace": [
+      "atom-te:runAll",
+      "atom-te:runLine",
+      "atom-te:runFile"
+    ]
   },
   "repository": "https://github.com/jetaggart/atom-te",
   "license": "MIT",
