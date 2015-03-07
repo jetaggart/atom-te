@@ -9,22 +9,30 @@ module.exports = AtomTe =
     @subscriptions = new CompositeDisposable
 
     @subscriptions.add atom.commands.add 'atom-workspace', 'atom-te:runLine': => @runLine()
+    @subscriptions.add atom.commands.add 'atom-workspace', 'atom-te:runFile': => @runFile()
 
   deactivate: ->
     @subscriptions.dispose()
 
-  runLine: ->
+  currentFile: ->
     editor = atom.workspace.getActiveEditor()
     return unless editor?
 
-    cursor = editor.getCursor()
-    line = cursor.getBufferRow() + 1
-    @run(editor.getPath(), line)
+    editor.getPath()
 
-  run: (file, line) ->
+  runFile: ->
+    @run(@currentFile())
+
+  runLine: ->
+    editor = atom.workspace.getActiveEditor()
+
+    line = editor.getCursor().getBufferRow() + 1
+    @run("#{@currentFile()}:#{line}")
+
+  run: (args) ->
     spawn = ChildProcess.spawn
     testCommand = "te run"
-    command = "#{testCommand} #{file}:#{line}"
+    command = "#{testCommand} #{args}"
     console.log "[Te] running: #{command}"
     terminal = spawn("bash", ["-l"])
 

@@ -3,6 +3,10 @@
   'atom-text-editor': [
     {
       'label': 'Atom Te: Run File'
+      'command': 'atom-te:runFile'
+    },
+    {
+      'label': 'Atom Te: Run Line'
       'command': 'atom-te:runLine'
     }
   ]
@@ -12,6 +16,10 @@
     'submenu': [
       'label': 'Atom Te'
       'submenu': [
+        {
+          'label': 'Run File'
+          'command': 'atom-te:runFile'
+        },
         {
           'label': 'Run Line'
           'command': 'atom-te:runLine'
