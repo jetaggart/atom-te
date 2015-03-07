@@ -1,7 +1,7 @@
 {
   "name": "atom-te",
   "main": "./lib/atom-te",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Universal test runner. Runs rspec and minitest.",
   "activationCommands": {
     "atom-workspace": [
@@ -16,6 +16,5 @@
   "engines": {
     "atom": ">=0.174.0 <2.0.0"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
