@@ -1,0 +1,22 @@
+# See https://atom.io/docs/latest/creating-a-package#menus for more details
+'context-menu':
+  'atom-text-editor': [
+    {
+      'label': 'Atom Te: Run File'
+      'command': 'atom-te:runLine'
+    }
+  ]
+'menu': [
+  {
+    'label': 'Packages'
+    'submenu': [
+      'label': 'Atom Te'
+      'submenu': [
+        {
+          'label': 'Run Line'
+          'command': 'atom-te:runLine'
+        }
+      ]
+    ]
+  }
+]
