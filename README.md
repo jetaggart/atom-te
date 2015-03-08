@@ -16,9 +16,9 @@ Install the using atom.
 
 ## Usage
 
-'ctrl-alt-t': 'atom-te:runFile'
-'ctrl-alt-x': 'atom-te:runLine'
-'ctrl-alt-r': 'atom-te:runAll'
-'ctrl-alt-e': 'atom-te:runLast'
+`ctrl-c f` or `ctrl-c ctrl-f` => `atom-te:runFile`
+`ctrl-c l` or `ctrl-c ctrl-l` => `atom-te:runLine`
+`ctrl-c a` or `ctrl-c ctrl-a` => `atom-te:runAll`
+`ctrl-c l` or `ctrl-c ctrl-l` => `atom-te:runLast`
 
 You cannot run synchronously right now. Please use `te listen`
