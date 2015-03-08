@@ -23,6 +23,11 @@ module.exports = AtomTe =
 
     editor.getPath()
 
+  saveAll: ->
+    for paneItem in atom.workspace.getPaneItems()
+      if paneItem.getURI?()? and paneItem.isModified?()
+        paneItem.save()
+
   runAll: ->
     @run("")
 
@@ -40,6 +45,8 @@ module.exports = AtomTe =
     @run(@lastCommand)
 
   run: (args) ->
+    @saveAll()
+
     spawn = ChildProcess.spawn
     testCommand = "te run"
     command = "#{testCommand} #{args}"
