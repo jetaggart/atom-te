@@ -9,6 +9,10 @@
 # https://atom.io/docs/latest/advanced/keymaps
 'atom-workspace':
   'ctrl-c f': 'atom-te:runFile'
+  'ctrl-c ctrl-f': 'atom-te:runFile'
   'ctrl-c l': 'atom-te:runLine'
+  'ctrl-c ctrl-l': 'atom-te:runLine'
   'ctrl-c a': 'atom-te:runAll'
+  'ctrl-c ctrl-a': 'atom-te:runAll'
   'ctrl-c c': 'atom-te:runLast'
+  'ctrl-c ctrl-c': 'atom-te:runLast'
