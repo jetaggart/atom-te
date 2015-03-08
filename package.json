@@ -1,5 +1,5 @@
 {
-  "name": "atom-te",
+  "name": "te",
   "main": "./lib/atom-te",
   "version": "0.2.1",
   "description": "Universal test runner. Runs rspec and minitest.",
