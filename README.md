@@ -16,13 +16,12 @@ Install with atom package manager: `apm install te`.
 
 ## Usage
 
-`ctrl-c f or ctrl-c ctrl-f` => `atom-te:runFile`
-
-`ctrl-c l or ctrl-c ctrl-l` => `atom-te:runLine`
-
-`ctrl-c a or ctrl-c ctrl-a` => `atom-te:runAll`
-
-`ctrl-c l or ctrl-c ctrl-l` => `atom-te:runLast`
+| Keybinding | Alternate | Command |
+|:----------:|:---------:|:-------:|
+| ctrl-c f | ctrl-c ctrl-f | 'atom-te:runFile' |
+| ctrl-c l | ctrl-c ctrl-l | atom-te:runLine |
+| ctrl-c a | ctrl-c ctrl-a | 'atom-te:runAll |
+| ctrl-c l | ctrl-c ctrl-l | 'atom-te:runLast |
 
 
 You cannot run synchronously right now. Please use `te listen`
