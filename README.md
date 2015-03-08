@@ -11,7 +11,7 @@ Universal test running either synchronously or asynchronously. Atom interface to
 
 The `te` executable must be on your PATH. Please visit [te](https://github.com/jetaggart/te) and follow the instructions there.
 
-Install the using atom.
+Install with atom package manager: `apm install atom-te`.
 
 
 ## Usage
