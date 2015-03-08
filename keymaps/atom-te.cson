@@ -8,7 +8,7 @@
 # For more detailed documentation see
 # https://atom.io/docs/latest/advanced/keymaps
 'atom-workspace':
-  'ctrl-alt-t': 'atom-te:runFile'
-  'ctrl-alt-x': 'atom-te:runLine'
-  'ctrl-alt-r': 'atom-te:runAll'
-  'ctrl-alt-e': 'atom-te:runLast'
+  'ctrl-c f': 'atom-te:runFile'
+  'ctrl-c l': 'atom-te:runLine'
+  'ctrl-c a': 'atom-te:runAll'
+  'ctrl-c c': 'atom-te:runLast'
