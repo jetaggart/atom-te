@@ -43,10 +43,11 @@ module.exports = AtomTe =
     @exec("run-last")
 
   run: (args) ->
-    @saveAll()
     @exec "run #{args}"
 
   exec: (command) ->
+    @saveAll()
+    
     spawn = ChildProcess.spawn
 
     terminal = spawn("bash", ["-l"])
