@@ -3,7 +3,6 @@ ChildProcess = require 'child_process'
 
 module.exports = AtomTe =
   subscriptions: null
-  lastCommand: null
 
   activate: (state) ->
     # Events subscribed to in atom's system can be easily cleaned up with a CompositeDisposable
@@ -41,22 +40,22 @@ module.exports = AtomTe =
     @run("#{@currentFile()}:#{line}")
 
   runLast: ->
-    return unless @lastCommand
-    @run(@lastCommand)
+    @exec("run-last")
 
   run: (args) ->
     @saveAll()
+    @exec "run #{args}"
 
+  exec: (command) ->
     spawn = ChildProcess.spawn
-    testCommand = "te run"
-    command = "#{testCommand} #{args}"
-    console.log "[Te] running: #{command}"
+
     terminal = spawn("bash", ["-l"])
 
-    terminal.stdin.write("cd #{@projectRoot()} && #{command}\n")
+    console.log "te #{command}"
+
+    terminal.stdin.write("cd #{@projectRoot()} && te #{command}\n")
     terminal.stdin.write("exit\n")
 
-    @lastCommand = args
 
   projectRoot: ->
     atom.project.getRootDirectory().getPath()
