@@ -1,5 +1,5 @@
 {CompositeDisposable} = require 'atom'
-ChildProcess = require 'child_process'
+system = require('child_process').exec
 
 module.exports = AtomTe =
   subscriptions: null
@@ -47,16 +47,13 @@ module.exports = AtomTe =
 
   exec: (command) ->
     @saveAll()
-    
-    spawn = ChildProcess.spawn
-
-    terminal = spawn("bash", ["-l"])
 
     console.log "te #{command}"
-
-    terminal.stdin.write("cd #{@projectRoot()} && te #{command}\n")
-    terminal.stdin.write("exit\n")
-
+    system "cd #{@projectRoot()} && te #{command}", (error, stdout, stderr) ->
+      console.log('stdout: ' + stdout)
+      console.log('stderr: ' + stderr)
+      if (error != null)
+        console.log('exec error: ' + error);
 
   projectRoot: ->
     atom.project.getRootDirectory().getPath()
