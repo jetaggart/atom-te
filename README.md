@@ -16,6 +16,8 @@ Install with atom package manager: `apm install te`.
 
 ## Usage
 
+*Launch atom from the command line to ensure `te` is found*
+
 | Keybinding | Alternate | Command |
 |:----------:|:---------:|:-------:|
 | ctrl-c f | ctrl-c ctrl-f | atom-te:runFile |
