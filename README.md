@@ -18,6 +18,8 @@ Install with atom package manager: `apm install te`.
 
 *Launch atom from the command line to ensure `te` is found*
 
+Open a terminal and execute `te listen`.
+
 | Keybinding | Alternate | Command |
 |:----------:|:---------:|:-------:|
 | ctrl-c f | ctrl-c ctrl-f | atom-te:runFile |
@@ -25,5 +27,4 @@ Install with atom package manager: `apm install te`.
 | ctrl-c a | ctrl-c ctrl-a | atom-te:runAll |
 | ctrl-c c | ctrl-c ctrl-c | atom-te:runLast |
 
-
-You cannot run synchronously right now. Please use `te listen`
+You cannot run synchronously right now. Synchronous support coming.
